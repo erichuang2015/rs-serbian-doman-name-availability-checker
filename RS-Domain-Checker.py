@@ -1,7 +1,7 @@
 
 # Author = "Zemundo"
 # GitHub https://github.com/zemundo
-# Version = 1.1
+# Version = 1.2
 
 # .RS Domain Availability Checker
 
