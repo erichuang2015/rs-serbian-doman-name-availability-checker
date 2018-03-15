@@ -11,26 +11,29 @@ import colorama
 from termcolor import *
 colorama.init()
 print(colored('Enter Domain Keyword without .RS extension', 'yellow'))
-while True:
-    # Comment in the beginning of the file
 
-    tld = '.rs'
+
+tld = '.rs'
+
+
+def checkDomain():
+    w = whois.whois(domainWithTld)
+    data.append(w)
+    for s in data:
+        if(s.text == '%ERROR:103: Domain is not registered'):
+            available = True
+            print(colored('Available!', 'green'))
+        else:
+            available = False
+            print(colored('Taken!', 'red'))
+
+
+while True:
 
     domen = str(input('Search for a domain name: '))
-    ceoDomen = str(domen+tld)
+    domainWithTld = str(domen+tld)
 
-    podaciNiz = []
-    slobodanIliZauzet = False
-
-    def checkDomain():
-        w = whois.whois(ceoDomen)
-        podaciNiz.append(w)
-        for s in podaciNiz:
-            if(s.text == '%ERROR:103: Domain is not registered'):
-                slobodanIliZauzet = True
-                print(colored('Available!', 'green'))
-            else:
-                slobodanIliZauzet = False
-                print(colored('Taken!', 'red'))
+    data = []
+    available = False
 
     checkDomain()
