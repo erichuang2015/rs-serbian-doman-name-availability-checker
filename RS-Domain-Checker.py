@@ -21,10 +21,8 @@ def checkDomain():
     data.append(w)
     for s in data:
         if(s.text == '%ERROR:103: Domain is not registered'):
-            available = True
             print(colored('Available!', 'green'))
         else:
-            available = False
             print(colored('Taken!', 'red'))
 
 
@@ -34,6 +32,5 @@ while True:
     domainWithTld = str(domen+tld)
 
     data = []
-    available = False
 
     checkDomain()
