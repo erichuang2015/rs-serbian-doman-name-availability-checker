@@ -1,7 +1,8 @@
 
+
 # Author = "Zemundo"
 # GitHub https://github.com/zemundo
-# Version = 1.2
+# Version = 1.3
 
 # .RS Domain Availability Checker
 
@@ -21,9 +22,11 @@ def checkDomain():
     data.append(w)
     for s in data:
         if(s.text == '%ERROR:103: Domain is not registered'):
-            print(colored('Available!', 'green'))
+
+            print(colored('{} is Available!'.format(domainWithTld), 'green'))
         else:
-            print(colored('Taken!', 'red'))
+
+            print(colored('{} is Taken!'.format(domainWithTld), 'red'))
 
 
 while True:
